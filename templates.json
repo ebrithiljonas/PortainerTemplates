@@ -4,7 +4,7 @@
     "description": "Includes Sonarr, Radarr, Lidarr and Nzbget",
     "note": "Deploys Sonarr, Radarr and Lidarr connected to Nzbget.",
     "categories": [
-        "Ebrithil Templates"
+        "Ebrithil"
     ],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/download_server.png",
