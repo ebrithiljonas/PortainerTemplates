@@ -1,0 +1,76 @@
+version: '2'
+
+# USER_ID       = User ID                            1001
+# GROUP_ID      = Group ID                           113
+# CONFIG_PATH   = Path to Config Files               /home/docker/config/
+# MEDIA_PATH    = Path to Media Files on NAS         /media/nas/
+# DOWNLOAD_PATH = Path to temporarly Download Files  /media/data/nzbget/
+
+services:
+  sonarr:
+    image: linuxserver/sonarr:preview
+    container_name: sonarr
+    depends_on:
+      - nzbget
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+      - UMASK_SET=022
+    volumes:
+      - ${CONFIG_PATH}sonarr/:/config
+      - ${MEDIA_PATH}:/tv
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+  radarr:
+    image: linuxserver/radarr:preview
+    container_name: radarr
+    depends_on:
+      - nzbget
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+      - UMASK_SET=022
+    volumes:
+      - ${CONFIG_PATH}radarr/:/config
+      - ${MEDIA_PATH}:/movies
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  lidarr:
+    image: linuxserver/lidarr
+    container_name: lidarr
+    depends_on:
+      - nzbget
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+      - UMASK_SET=022
+    volumes:
+      - ${CONFIG_PATH}lidarr/:/config
+      - ${MEDIA_PATH}:/music
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 8686:8686
+    restart: unless-stopped
+
+  nzbget:
+    image: linuxserver/nzbget
+    container_name: nzbget
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+    volumes:
+      - ${CONFIG_PATH}nzbget/:/config
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 6789:6789
+    restart: unless-stopped
