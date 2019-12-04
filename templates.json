@@ -1,0 +1,42 @@
+{
+    "type": 3,
+    "title": "Download Server",
+    "description": "Includes Sonarr, Radarr, Lidarr and Nzbget",
+    "note": "Deploys Sonarr, Radarr and Lidarr connected to Nzbget.",
+    "categories": [
+        "Ebrithil Templates"
+    ],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/download_server.png",
+    "repository": {
+        "url": "https://github.com/ebrithiljonas/PortainerTemplates",
+        "stackfile": "stacks/download_server.yaml"
+    },
+    "env": [
+        {
+            "name": "USER_ID",
+            "label": "User ID",
+            "description": "Defines the User who will run the Program ."
+        },
+        {
+            "name": "GROUP_ID",
+            "label": "Group ID",
+            "description": "Defines the Group who will run the Program."
+        },
+        {
+            "name": "CONFIG_PATH",
+            "label": "Path of the Configuration",
+            "description": "Path where all the config files will be stored, in a separate folder for each Program."
+        },
+        {
+            "name": "MEDIA_PATH",
+            "label": "Path for the media files",
+            "description": "Path where the downloaded media files will be stored."
+        },
+        {
+            "name": "DOWNLOAD_PATH",
+            "label": "Path for the temporary download files",
+            "description": "Path where all the files will be downloaded to from nzbget."
+        }
+    ]
+}
