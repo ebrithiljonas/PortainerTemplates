@@ -45,5 +45,53 @@
                 "description": "Path where all the files will be downloaded to from nzbget."
             }
         ]
+    },
+    {
+        "type": 3,
+        "title": "Nextcloud",
+        "description": "Nextcloud with MariaDB",
+        "categories": [
+            "Ebrithil"
+        ],
+        "platform": "linux",
+        "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/nextcloud.png",
+        "repository": {
+            "url": "https://github.com/ebrithiljonas/PortainerTemplates",
+            "stackfile": "stacks/nextcloud.yaml"
+        },
+        "env": [
+            {
+                "name": "USER_ID",
+                "label": "User ID",
+                "default": "1000",
+                "description": "Defines the User who will run the Program ."
+            },
+            {
+                "name": "GROUP_ID",
+                "label": "Group ID",
+                "default": "1000",
+                "description": "Defines the Group who will run the Program."
+            },
+            {
+                "name": "CONFIG_PATH",
+                "label": "Path of the Configuration (end with /)",
+                "default": "/home/docker/config/",
+                "description": "Path where all the config files will be stored, in a separate folder for each Program."
+            },
+            {
+                "name": "DATA_PATH",
+                "label": "Path for all the Data (end with /)",
+                "default": "/media/nas/",
+                "description": "Path where all Files on the cloud will be saved."
+            },
+            {
+                "name": "ROOT_PASSWORD",
+                "label": "Root Password of the MariaDB"
+            },
+            {
+                "name": "PASSWORD",
+                "label": "Password of Nextcloud User on DB"
+            }
+        ]
     }
 ]
