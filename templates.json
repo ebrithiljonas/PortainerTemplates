@@ -17,31 +17,31 @@
             {
                 "name": "USER_ID",
                 "label": "User ID",
-                "preset": "1000",
+                "default": "1000",
                 "description": "Defines the User who will run the Program ."
             },
             {
                 "name": "GROUP_ID",
                 "label": "Group ID",
-                "preset": "1000",
+                "default": "1000",
                 "description": "Defines the Group who will run the Program."
             },
             {
                 "name": "CONFIG_PATH",
                 "label": "Path of the Configuration",
-                "preset": "/home/docker/config/",
+                "default": "/home/docker/config/",
                 "description": "Path where all the config files will be stored, in a separate folder for each Program."
             },
             {
                 "name": "MEDIA_PATH",
                 "label": "Path for the media files",
-                "preset": "/media/nas/",
+                "default": "/media/nas/",
                 "description": "Path where the downloaded media files will be stored."
             },
             {
                 "name": "DOWNLOAD_PATH",
                 "label": "Path for the temporary download files",
-                "preset": "/media/data/nzbget/",
+                "default": "/media/data/nzbget/",
                 "description": "Path where all the files will be downloaded to from nzbget."
             }
         ]
