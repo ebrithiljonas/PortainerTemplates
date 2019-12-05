@@ -28,19 +28,19 @@
             },
             {
                 "name": "CONFIG_PATH",
-                "label": "Path of the Configuration",
+                "label": "Path of the Configuration (end with /)",
                 "default": "/home/docker/config/",
                 "description": "Path where all the config files will be stored, in a separate folder for each Program."
             },
             {
                 "name": "MEDIA_PATH",
-                "label": "Path for the media files",
+                "label": "Path for the media files (end with /)",
                 "default": "/media/nas/",
                 "description": "Path where the downloaded media files will be stored."
             },
             {
                 "name": "DOWNLOAD_PATH",
-                "label": "Path for the temporary download files",
+                "label": "Path for the temporary download files (end with /)",
                 "default": "/media/data/nzbget/",
                 "description": "Path where all the files will be downloaded to from nzbget."
             }
