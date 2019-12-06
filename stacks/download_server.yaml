@@ -54,6 +54,20 @@ services:
     ports:
       - 8686:8686
     restart: unless-stopped
+    
+    hydra2:
+    image: linuxserver/hydra2
+    container_name: hydra2
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+    volumes:
+      - ${CONFIG_PATH}hydra2/:/config
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 5076:5076
+    restart: unless-stopped
 
   nzbget:
     image: linuxserver/nzbget
