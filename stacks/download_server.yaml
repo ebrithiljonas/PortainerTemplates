@@ -55,7 +55,7 @@ services:
       - 8686:8686
     restart: unless-stopped
     
-    nzbget:
+    hydra2:
     image: linuxserver/hydra2
     container_name: hydra2
     environment:
