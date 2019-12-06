@@ -63,7 +63,7 @@ services:
       - PGID=${GROUP_ID}
       - TZ=Europe/Zurich
     volumes:
-      - ${CONFIG_PATH}nzbget/:/config
+      - ${CONFIG_PATH}hydra2/:/config
       - ${DOWNLOAD_PATH}:/downloads
     ports:
       - 5076:5076
