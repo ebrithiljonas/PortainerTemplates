@@ -4,13 +4,13 @@ services:
   plex:
     image: plexinc/pms-docker
     container_name: plex
-    runtime: nvidia
+    #runtime: nvidia
     environment:
       - PUID=${USER_ID}
       - PGID=${GROUP_ID}
       - TZ=Europe/Zurich
-      - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      #- NVIDIA_VISIBLE_DEVICES=all
+      #- NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
     hostname: ${HOSTNAME}
     volumes:
       - ${CONFIG_PATH}plex/:/config
