@@ -90,7 +90,7 @@
                 "label": "Path for the media files (end with /)",
                 "default": "/media/nas/",
                 "description": "Path where the downloaded media files will be stored."
-            },
+            }
         ]
     },
     {
