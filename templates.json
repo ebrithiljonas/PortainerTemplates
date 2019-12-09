@@ -46,6 +46,53 @@
             }
         ]
     },
+	{
+        "type": 3,
+        "title": "Plex Server",
+        "description": "Includes Plex and Tautulli",
+        "note": "Deploys Tautulli connected to Plex.",
+        "categories": [
+            "Ebrithil"
+        ],
+        "platform": "linux",
+        "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/plex.png",
+        "repository": {
+            "url": "https://github.com/ebrithiljonas/PortainerTemplates",
+            "stackfile": "stacks/plex.yaml"
+        },
+        "env": [
+            {
+                "name": "USER_ID",
+                "label": "User ID",
+                "default": "1000",
+                "description": "Defines the User who will run the Program ."
+            },
+            {
+                "name": "GROUP_ID",
+                "label": "Group ID",
+                "default": "1000",
+                "description": "Defines the Group who will run the Program."
+            },
+			{
+                "name": "HOSTNAME",
+                "label": "Hostname",
+                "default": "PlexServer",
+                "description": "Name of your Plex Server"
+            },
+            {
+                "name": "CONFIG_PATH",
+                "label": "Path of the Configuration (end with /)",
+                "default": "/home/docker/config/",
+                "description": "Path where all the config files will be stored, in a separate folder for each Program."
+            },
+            {
+                "name": "MEDIA_PATH",
+                "label": "Path for the media files (end with /)",
+                "default": "/media/nas/",
+                "description": "Path where the downloaded media files will be stored."
+            },
+        ]
+    },
     {
         "type": 3,
         "title": "Nextcloud",
