@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  plex:
+    image: plexinc/pms-docker
+    container_name: plex
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+    hostname: ${HOSTNAME}
+    volumes:
+      - ${CONFIG_PATH}plex/:/config
+      - ${CONFIG_PATH}plex/temp/:/transcode
+      - ${MEDIA_PATH}:/data
+    ports:
+      - 32400:32400/tcp
+    restart: unless-stopped
+
+  tautulli:
+    image: linuxserver/tautulli
+    container_name: tautulli
+    depends_on:
+      - plex
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+    volumes:
+      - ${CONFIG_PATH}tautulli:/config
+      - ${CONFIG_PATH}plex/Library/Application Support/Plex Media Server/Logs/:/logs:ro
+    ports:
+      - 8181:8181
+    restart: unless-stopped
