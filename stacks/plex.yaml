@@ -17,7 +17,7 @@ services:
       - ${CONFIG_PATH}plex/temp/:/transcode
       - ${MEDIA_PATH}:/data
     ports:
-      - 32400:32400/tcp
+      - 32400:32400
     restart: unless-stopped
 
   tautulli:
