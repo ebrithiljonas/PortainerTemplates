@@ -73,7 +73,7 @@
                 "default": "1000",
                 "description": "Defines the Group who will run the Program."
             },
-			{
+            {
                 "name": "HOSTNAME",
                 "label": "Hostname",
                 "default": "PlexServer",
