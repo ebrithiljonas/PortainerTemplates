@@ -58,16 +58,35 @@ services:
   hydra2:
     image: linuxserver/hydra2
     container_name: hydra2
+    depends_on:
+      - nzbget
     environment:
       - PUID=${USER_ID}
       - PGID=${GROUP_ID}
       - TZ=Europe/Zurich
+      - UMASK_SET=022
     volumes:
       - ${CONFIG_PATH}hydra2/:/config
       - ${DOWNLOAD_PATH}:/downloads
     ports:
       - 5076:5076
     restart: unless-stopped
+    
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    depends_on:
+      - nzbget
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Europe/Zurich
+      - UMASK_SET=022
+    volumes:
+      - ${CONFIG_PATH}ombi/:/config
+    ports:
+      - 3579:3579
+    restart: unless-stopped    
 
   nzbget:
     image: linuxserver/nzbget
