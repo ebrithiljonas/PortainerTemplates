@@ -20,7 +20,7 @@ services:
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     restart: unless-stopped
 
-  certbot:
+   certbot:
     image: certbot/certbot
     container_name: certbot
     environment:
