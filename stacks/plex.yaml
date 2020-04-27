@@ -12,7 +12,7 @@ services:
     hostname: ${HOSTNAME}
     volumes:
       - ${CONFIG_PATH}plex/:/config
-      - $/SSD/docker/plextemp/:/transcode
+      - /SSD/docker/plextemp/:/transcode
       - ${MEDIA_PATH}:/data
     ports:
       - 32400:32400
