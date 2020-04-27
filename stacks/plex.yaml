@@ -4,15 +4,15 @@ services:
   plex:
     image: plexinc/pms-docker
     container_name: plex
-    #runtime: nvidia
+    runtime: nvidia
     environment:
       - TZ=Europe/Zurich
-      #- NVIDIA_VISIBLE_DEVICES=all
-      #- NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
     hostname: ${HOSTNAME}
     volumes:
       - ${CONFIG_PATH}plex/:/config
-      - ${CONFIG_PATH}plex/temp/:/transcode
+      - $/SSD/docker/plextemp/:/transcode
       - ${MEDIA_PATH}:/data
     ports:
       - 32400:32400
@@ -28,7 +28,7 @@ services:
       - PGID=${GROUP_ID}
       - TZ=Europe/Zurich
     volumes:
-      - ${CONFIG_PATH}tautulli:/config
+      - ${CONFIG_PATH}tautulli/:/config
       - ${CONFIG_PATH}plex/Library/Application Support/Plex Media Server/Logs/:/logs:ro
     ports:
       - 8181:8181
