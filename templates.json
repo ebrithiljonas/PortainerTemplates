@@ -131,7 +131,7 @@
         "volumes": [
             {
                 "container": "/data",
-                "bind": CONFIG_PATH"caddy/data"
+                "bind": "${CONFIG_PATH}caddy/data"
             },
             {
                 "container": "/config",
