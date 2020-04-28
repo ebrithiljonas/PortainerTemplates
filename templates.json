@@ -126,7 +126,7 @@
         "image": "caddy:latest",
         "ports": [
           "80:80/tcp",
-          "443/tcp"
+          "443:443/tcp"
         ],
         "volumes": [
             {
