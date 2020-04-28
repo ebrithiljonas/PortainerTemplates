@@ -142,7 +142,7 @@
             {
                 "name": "CONFIG_PATH",
                 "label": "Path of the Configuration (end with /)",
-                "default": "/home/docker/config/",
+                "default": "Change the Path under Advanced Options",
                 "description": "Path where all the config files will be stored."
             }
         ]
