@@ -141,8 +141,8 @@
         "env": [
             {
                 "name": "CONFIG_PATH",
-                "label": "Path of the Configuration (end with /)",
-                "default": "Change the Path under Advanced Options",
+                "label": "Change the Path under 'Advanced Options' (end with /)",
+                "default": "This field is only for Info. Change the Path under Advanced Options",
                 "description": "Path where all the config files will be stored."
             }
         ]
