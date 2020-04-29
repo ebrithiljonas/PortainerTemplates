@@ -177,7 +177,31 @@
                 "preset": true
             }
         ]
-    }
-      
-
+    },
+	{
+        "type": 1,
+        "title": "Nginx",
+        "description": "Nginx Server",
+        "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/nginx.png",
+        "restart_policy": "unless-stopped",
+        "image": "nginx",
+        "ports": [
+          "80:80/tcp",
+          "443:443/tcp"
+        ],
+        "volumes": [
+            {
+                "container": "/etc/nginx",
+                "bind": "${CONFIG_PATH}nginx/"
+            }
+        ],
+        "env": [
+            {
+                "name": "CONFIG_PATH",
+                "label": "Change the Path under 'Advanced Options' (end with /)",
+                "default": "This field is only for Info. Change the Path under Advanced Options",
+                "description": "Path where all the config files will be stored."
+            }
+        ]
+    }    
 ]
