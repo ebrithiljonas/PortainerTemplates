@@ -146,7 +146,38 @@
                 "description": "Path where all the config files will be stored."
             }
         ]
-      }
+    },
+	{
+        "type": 1,
+        "title": "Teamspeak",
+        "description": "Teamspeak Server",
+        "logo": "https://raw.githubusercontent.com/ebrithiljonas/PortainerTemplates/master/icons/ts.png",
+        "restart_policy": "unless-stopped",
+        "image": "teamspeak:latest",
+        "ports": [
+          "30033:30033/tcp",
+          "9987:9987/udp"
+        ],
+        "volumes": [
+            {
+                "container": "/var/ts3server",
+                "bind": "${CONFIG_PATH}teamspeak/"
+            }
+        ],
+        "env": [
+            {
+                "name": "CONFIG_PATH",
+                "label": "Change the Path under 'Advanced Options' (end with /)",
+                "default": "This field is only for Info. Change the Path under Advanced Options",
+                "description": "Path where all the config files will be stored."
+            },
+			{
+                "name": "TS3SERVER_LICENSE",
+                "default": "accept",
+                "preset": true
+            }
+        ]
+    }
       
 
 ]
