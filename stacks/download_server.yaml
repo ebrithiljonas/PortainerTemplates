@@ -56,7 +56,7 @@ services:
     restart: unless-stopped
     
   hydra2:
-    image: linuxserver/hydra2
+    image: linuxserver/nzbhydra2
     container_name: hydra2
     depends_on:
       - nzbget
